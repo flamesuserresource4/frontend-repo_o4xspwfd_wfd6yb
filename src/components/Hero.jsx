@@ -17,7 +17,8 @@ export default function Hero() {
     mouseY.set(y);
   };
 
-  const flash = useMotionTemplate`radial-gradient(200px 200px at ${mouseX}px ${mouseY}px, rgba(0,232,255,0.35), rgba(124,244,224,0.28) 35%, rgba(180,110,255,0.18) 55%, transparent 70%)`;
+  // Radial light that follows the mouse (brighter, tighter core)
+  const flash = useMotionTemplate`radial-gradient(220px 220px at ${mouseX}px ${mouseY}px, rgba(0,232,255,0.45), rgba(124,244,224,0.32) 35%, rgba(255,0,128,0.22) 55%, transparent 72%)`;
 
   return (
     <section
@@ -28,20 +29,19 @@ export default function Hero() {
       {/* Spline 3D background (full cover) */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode"
+          scene="https://prod.spline.design/z3DRq211g66TkBow/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
 
       {/* Vibrant color wash overlays - do not block interaction */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        {/* Magenta/Purple sweep */}
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_700px_at_20%_10%,rgba(196,78,255,0.35),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_80%_20%,rgba(255,0,128,0.22),transparent_60%)]" />
-        {/* Cyan beam haze */}
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_800px_at_50%_40%,rgba(0,232,255,0.18),transparent_65%)]" />
-        {/* Navy depth fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111522]/50 to-[#0B0D17]" />
+        {/* Layered purple/magenta/cyan glows so the page reads color-forward, not black */}
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_800px_at_20%_15%,rgba(196,78,255,0.38),transparent_62%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(1000px_700px_at_80%_20%,rgba(255,0,128,0.28),transparent_62%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(1300px_900px_at_50%_45%,rgba(0,232,255,0.22),transparent_68%)]" />
+        {/* Gentle depth fade to anchor content */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111522]/40 to-[#0B0D17]" />
       </div>
 
       {/* Local mouse-following flash for the hero section */}

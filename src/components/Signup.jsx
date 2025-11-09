@@ -5,8 +5,8 @@ export default function Signup() {
     <section id="signup" className="relative bg-gradient-to-t from-[#13162B] via-[#161A24] to-[#0B0D17] py-24 text-[#F8FAFC]">
       {/* Ambient color wash */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[radial-gradient(800px_500px_at_20%_80%,rgba(196,78,255,0.18),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_80%_90%,rgba(0,232,255,0.12),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(800px_500px_at_20%_80%,rgba(196,78,255,0.28),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_80%_90%,rgba(0,232,255,0.18),transparent_65%)]" />
       </div>
 
       <div className="relative mx-auto max-w-xl px-6 text-center">
@@ -41,11 +41,11 @@ export default function Signup() {
             type="email"
             required
             placeholder="you@company.com"
-            className="w-full flex-1 rounded-full border border-fuchsia-600/40 bg-[#0E1226] px-5 py-3 text-sm text-white placeholder:text-slate-500 focus:border-[#00E8FF] focus:ring-2 focus:ring-[#00E8FF]/30 outline-none"
+            className="w-full flex-1 rounded-full border border-fuchsia-600/40 bg-[#0E1226] px-5 py-3 text-sm text-white placeholder:text-slate-500 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/40 outline-none"
           />
           <button
             type="submit"
-            className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-fuchsia-500 via-[#00E8FF] to-cyan-400 px-6 py-3 text-sm font-semibold text-[#0B0D17] shadow-[0_10px_30px_rgba(0,232,255,0.35)] transition-transform duration-200 hover:scale-[1.02]"
+            className="group inline-flex items-center justify-center rounded-full bg-[conic-gradient(at_0%_0%,theme(colors.cyan.300),theme(colors.cyan.200),theme(colors.fuchsia.400),theme(colors.fuchsia.600),theme(colors.cyan.300))] px-6 py-3 text-sm font-semibold text-[#0B0D17] shadow-[0_10px_30px_rgba(236,72,153,0.35)] transition-transform duration-200 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-[#0B0D17]"
           >
             <span className="relative">
               Get Your Free Evident Score

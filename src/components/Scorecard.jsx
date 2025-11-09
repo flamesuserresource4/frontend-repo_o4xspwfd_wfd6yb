@@ -23,8 +23,8 @@ export default function Scorecard() {
   return (
     <section className="relative bg-gradient-to-b from-[#0B0D17] via-[#111522] to-[#13162B] py-24 text-[#F8FAFC]">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_10%_20%,rgba(196,78,255,0.18),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(1000px_700px_at_85%_60%,rgba(0,232,255,0.12),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_10%_20%,rgba(196,78,255,0.28),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(1000px_700px_at_85%_60%,rgba(0,232,255,0.18),transparent_65%)]" />
       </div>
       <div className="relative mx-auto max-w-6xl px-6">
         <motion.h2
@@ -48,7 +48,7 @@ export default function Scorecard() {
             className="group relative w-full max-w-3xl cursor-pointer rounded-3xl border border-slate-800/70 bg-[#0F1328]/80 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-sm"
           >
             <div
-              className="pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-r from-fuchsia-500/25 via-transparent to-cyan-400/25 opacity-60 blur transition-opacity duration-300 group-hover:opacity-90"
+              className="pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-r from-fuchsia-500/35 via-transparent to-cyan-400/35 opacity-70 blur transition-opacity duration-300 group-hover:opacity-100"
               aria-hidden
             />
             <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -69,7 +69,7 @@ export default function Scorecard() {
                       whileInView={{ width: `${item.score}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: 0.1 }}
-                      className="h-full rounded-full bg-gradient-to-r from-[#00E8FF] via-[#7CF4E0] to-fuchsia-400"
+                      className="h-full rounded-full bg-gradient-to-r from-cyan-300 via-cyan-200 via-fuchsia-400 to-fuchsia-600"
                     />
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function Scorecard() {
                   animate={{ opacity: [0.6, 1, 0.6] }}
                   transition={{ duration: 2.6, repeat: Infinity }}
                   style={{ filter: `brightness(${light.get()})` }}
-                  className="h-10 w-10 rounded-full bg-[#00E8FF] shadow-[0_0_30px_10px_rgba(59,130,246,0.5)]"
+                  className="h-10 w-10 rounded-full bg-cyan-300 shadow-[0_0_30px_10px_rgba(56,189,248,0.6)]"
                 />
               </div>
             </div>
