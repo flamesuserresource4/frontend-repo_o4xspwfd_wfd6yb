@@ -28,7 +28,7 @@ export default function Hero() {
       {/* Spline 3D background (full cover) */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/wwTRdG1D9CkNs368/scene.splinecode"
+          scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
