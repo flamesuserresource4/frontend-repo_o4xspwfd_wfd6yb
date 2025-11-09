@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Explainer from './components/Explainer';
 import Scorecard from './components/Scorecard';
 import Signup from './components/Signup';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -11,10 +12,7 @@ export default function App() {
       <Explainer />
       <Scorecard />
       <Signup />
-      {/* Simple footer */}
-      <footer className="border-t border-white/10 bg-[#0B0D17] py-10 text-center text-white/60">
-        <p>Evident © {new Date().getFullYear()}</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
