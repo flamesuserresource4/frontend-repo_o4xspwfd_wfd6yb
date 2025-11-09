@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 
 export default function Signup() {
   return (
-    <section id="signup" className="relative bg-gradient-to-t from-white via-[#F8FBFF] to-white py-24">
+    <section id="signup" className="relative bg-gradient-to-t from-[#0B0D17] via-[#111522] to-[#161A24] py-24 text-[#F8FAFC]">
       <div className="relative mx-auto max-w-xl px-6 text-center">
         <motion.h3
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl font-semibold text-[#0A0F1F]"
+          className="text-2xl font-extrabold"
         >
           Get your free Evident Score
         </motion.h3>
@@ -18,7 +18,7 @@ export default function Signup() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="mt-3 text-sm text-slate-600"
+          className="mt-3 text-sm text-slate-300"
         >
           Join the pilot to measure and improve your discoverability across humans, algorithms, and AI.
         </motion.p>
@@ -35,20 +35,20 @@ export default function Signup() {
             type="email"
             required
             placeholder="you@company.com"
-            className="w-full flex-1 rounded-full border border-slate-200/70 bg-white px-5 py-3 text-sm text-[#0A0F1F] shadow-[0_6px_20px_rgba(2,6,23,0.04)] outline-none placeholder:text-slate-400 focus:border-[#9FF0FF] focus:ring-2 focus:ring-[#9FF0FF]/30"
+            className="w-full flex-1 rounded-full border border-slate-800 bg-[#0E1220] px-5 py-3 text-sm text-white placeholder:text-slate-500 focus:border-[#00E8FF] focus:ring-2 focus:ring-[#00E8FF]/30 outline-none"
           />
           <button
             type="submit"
-            className="group inline-flex items-center justify-center rounded-full bg-[#0A0F1F] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(2,6,23,0.2)] transition-transform duration-200 hover:scale-[1.02]"
+            className="group inline-flex items-center justify-center rounded-full bg-[#00E8FF] px-6 py-3 text-sm font-semibold text-[#0B0D17] shadow-[0_10px_30px_rgba(0,232,255,0.35)] transition-transform duration-200 hover:scale-[1.02]"
           >
             <span className="relative">
               Get Your Free Evident Score
-              <span className="absolute inset-x-0 -bottom-0.5 block h-[2px] origin-center scale-x-0 bg-gradient-to-r from-transparent via-[#9FF0FF] to-transparent transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute inset-x-0 -bottom-0.5 block h-[2px] origin-center scale-x-0 bg-gradient-to-r from-transparent via-[#7CF4E0] to-transparent transition-transform duration-300 group-hover:scale-x-100" />
             </span>
           </button>
         </motion.form>
 
-        <p className="mt-6 text-[12px] text-slate-500">Built by Scalelabs. © Evident.so 2025.</p>
+        <p className="mt-6 text-[12px] text-slate-400">Built by Scalelabs. © Evident.so 2025.</p>
       </div>
     </section>
   );

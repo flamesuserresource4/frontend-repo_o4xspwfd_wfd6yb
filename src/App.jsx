@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="font-inter text-[#0A0F1F]">
+    <div className="min-h-screen bg-[#0B0D17] text-[#F8FAFC] antialiased font-inter">
       <Hero />
       <Explainer />
       <Scorecard />

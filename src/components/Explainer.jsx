@@ -2,44 +2,43 @@ import { motion } from 'framer-motion';
 
 export default function Explainer() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#F8FBFF] py-24 text-[#0A0F1F]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(159,240,255,0.15),transparent_60%)]" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#0B0D17] via-[#111522] to-[#161A24] py-24 text-[#F8FAFC]">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,232,255,0.10),transparent_65%)]" />
       <div className="relative mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
-          className="text-center text-2xl font-semibold tracking-tight text-[#0A0F1F] sm:text-3xl"
+          className="text-center text-2xl font-extrabold tracking-tight text-[#F8FAFC] sm:text-3xl"
         >
-          Understand your visibility across humans, algorithms, and AI
+          Signal clarity across humans, algorithms, and AI
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="mx-auto mt-4 max-w-3xl text-center text-[15px] leading-relaxed text-[#1F2937]"
+          className="mx-auto mt-4 max-w-3xl text-center text-[15px] leading-relaxed text-slate-300"
         >
-          Evident analyzes how your brand is understood by humans, algorithms, and AI to
-          quantify your discoverability. We map signals across content, structure, and
-          context to surface what makes you findable — and what holds you back.
+          We quantify how your brand is perceived and understood by different systems.
+          Our scoring model maps the surfaces that matter most for discoverability.
         </motion.p>
 
-        {/* Subtle data glyphs / lines implying scanning */}
+        {/* Three cards */}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {[
             {
               title: 'Human Signals',
-              text: 'Clarity, intent, and brand narrative across key surfaces.',
+              text: 'Narrative, clarity, and brand comprehension across key touchpoints.',
             },
             {
               title: 'Algorithmic Signals',
-              text: 'Technical health, structure, and network resonance.',
+              text: 'Technical health, site structure, and network authority.',
             },
             {
               title: 'AI Signals',
-              text: 'Model grounding, entity coherence, and semantic coverage.',
+              text: 'Entity grounding, semantic coverage, and model alignment.',
             },
           ].map((card, i) => (
             <motion.div
@@ -48,16 +47,16 @@ export default function Explainer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-6 shadow-[0_10px_30px_rgba(2,6,23,0.04)]"
+              className="relative overflow-hidden rounded-2xl border border-slate-800/70 bg-[#0F1320]/80 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-sm"
             >
-              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#9FF0FF]/20 blur-2xl" />
-              <div className="mb-2 h-[2px] w-12 bg-gradient-to-r from-[#9FF0FF] to-transparent" />
-              <h3 className="text-base font-semibold">{card.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{card.text}</p>
+              <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#00E8FF]/15 blur-2xl" />
+              <div className="mb-2 h-[2px] w-12 bg-gradient-to-r from-[#00E8FF] via-[#7CF4E0] to-transparent" />
+              <h3 className="text-base font-semibold text-white">{card.title}</h3>
+              <p className="mt-2 text-sm text-slate-300">{card.text}</p>
 
               {/* Scanning line */}
               <motion.div
-                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#9FF0FF] to-transparent"
+                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00E8FF] to-transparent"
                 animate={{ x: ['-10%', '10%', '-10%'] }}
                 transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
               />
