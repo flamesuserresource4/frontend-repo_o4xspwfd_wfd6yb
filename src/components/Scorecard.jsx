@@ -1,100 +1,50 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import React from 'react';
+
+const metrics = [
+  { label: 'Clarity', value: 84 },
+  { label: 'Delight', value: 92 },
+  { label: 'Speed', value: 76 },
+];
 
 export default function Scorecard() {
-  const rotateX = useMotionValue(0);
-  const rotateY = useMotionValue(0);
-  const light = useTransform(rotateY, [-15, 15], [0.2, 0.9]);
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - card.left;
-    const y = e.clientY - card.top;
-    const rX = (y / card.height - 0.5) * -10;
-    const rY = (x / card.width - 0.5) * 10;
-    rotateX.set(rX);
-    rotateY.set(rY);
-  };
-
-  const reset = () => {
-    rotateX.set(0);
-    rotateY.set(0);
-  };
-
   return (
-    <section className="relative bg-gradient-to-b from-[#0B0D17] via-[#111522] to-[#13162B] py-24 text-[#F8FAFC]">
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_10%_20%,rgba(196,78,255,0.28),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(1000px_700px_at_85%_60%,rgba(0,232,255,0.18),transparent_65%)]" />
+    <section className="relative w-full bg-[#0B0D17] text-white">
+      <div className="pointer-events-none absolute inset-0 mix-blend-screen">
+        <div className="absolute left-1/3 top-6 h-36 w-36 rounded-full bg-cyan-400/20 blur-3xl" />
+        <div className="absolute right-1/4 bottom-10 h-40 w-40 rounded-full bg-fuchsia-500/20 blur-3xl" />
       </div>
-      <div className="relative mx-auto max-w-6xl px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-          className="text-center text-2xl font-extrabold tracking-tight sm:text-3xl"
-        >
-          Evident Scorecard
-        </motion.h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-200">
-          A composite visibility score spanning Human, Algorithmic, and AI signals.
-        </p>
 
-        <div className="mt-12 flex w-full items-center justify-center">
-          <motion.div
-            style={{ rotateX, rotateY }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={reset}
-            className="group relative w-full max-w-3xl cursor-pointer rounded-3xl border border-slate-800/70 bg-[#0F1328]/80 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-sm"
-          >
-            <div
-              className="pointer-events-none absolute -inset-px rounded-3xl bg-gradient-to-r from-fuchsia-500/35 via-transparent to-cyan-400/35 opacity-70 blur transition-opacity duration-300 group-hover:opacity-100"
-              aria-hidden
-            />
-            <div className="relative grid grid-cols-1 gap-6 sm:grid-cols-3">
-              {[
-                { label: 'Human', score: 82 },
-                { label: 'Algorithmic', score: 76 },
-                { label: 'AI', score: 88 },
-              ].map((item) => (
-                <div key={item.label} className="rounded-2xl border border-slate-800/70 bg-[#0E1226]/70 p-5">
-                  <div className="text-xs uppercase tracking-wide text-slate-400">{item.label}</div>
-                  <div className="mt-2 flex items-end gap-2">
-                    <div className="text-3xl font-extrabold">{item.score}</div>
-                    <div className="mb-1 text-xs text-slate-400">/100</div>
-                  </div>
-                  <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-slate-800">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${item.score}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.1 }}
-                      className="h-full rounded-full bg-gradient-to-r from-cyan-300 via-cyan-200 via-fuchsia-400 to-fuchsia-600"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+      <div className="relative z-10 container mx-auto px-6 py-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Scorecard</h2>
+        <p className="mt-3 max-w-2xl text-white/70">A vivid gradient language communicates signal strength instantly.</p>
 
-            <div className="relative mt-6 rounded-2xl border border-slate-800/70 bg-[#0E1226]/70 p-5">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-xs uppercase tracking-wide text-slate-400">Overall</div>
-                  <div className="mt-1 text-2xl font-extrabold">Evident Score: 82</div>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            {metrics.map((m) => (
+              <div key={m.label} className="mb-6 last:mb-0">
+                <div className="mb-2 flex items-center justify-between text-sm">
+                  <span className="text-white/80">{m.label}</span>
+                  <span className="text-white/60">{m.value}%</span>
                 </div>
-                <motion.div
-                  animate={{ opacity: [0.6, 1, 0.6] }}
-                  transition={{ duration: 2.6, repeat: Infinity }}
-                  style={{ filter: `brightness(${light.get()})` }}
-                  className="h-10 w-10 rounded-full bg-cyan-300 shadow-[0_0_30px_10px_rgba(56,189,248,0.6)]"
-                />
+                <div className="h-3 w-full overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full bg-gradient-to-r from-cyan-400 via-cyan-300 via-40% via-fuchsia-400 to-fuchsia-500"
+                    style={{ width: `${m.value}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl border border-white/10 p-6 [background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.04))]">
+            <h3 className="text-lg font-medium">Gradient Border Card</h3>
+            <p className="mt-2 text-sm text-white/70">Hover to see a soft glow accentuating the cyan→fuchsia spectrum.</p>
+            <div className="mt-6 rounded-xl border border-transparent p-[2px] [background:linear-gradient(90deg,rgba(0,232,255,0.6),rgba(236,72,153,0.6))]">
+              <div className="rounded-[10px] bg-[#0B0D17] p-4">
+                <p className="text-sm text-white/80">Consistent accents reinforce hierarchy and movement.</p>
               </div>
             </div>
-          </motion.div>
-        </div>
-
-        <div className="mt-10 text-center text-sm text-slate-300">
-          <span className="border-b border-fuchsia-400/60 pb-0.5">Currently in pilot with select brands and agencies</span>
+          </div>
         </div>
       </div>
     </section>
