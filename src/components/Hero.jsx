@@ -4,7 +4,7 @@ import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
   const ref = useRef(null);
-  // Track mouse for reactive light flash
+  // Track mouse for reactive light flash (local accent, complements global glow)
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -17,7 +17,7 @@ export default function Hero() {
     mouseY.set(y);
   };
 
-  const flash = useMotionTemplate`radial-gradient(200px 200px at ${mouseX}px ${mouseY}px, rgba(0,232,255,0.45), rgba(124,244,224,0.35) 35%, rgba(180,110,255,0.20) 55%, transparent 70%)`;
+  const flash = useMotionTemplate`radial-gradient(200px 200px at ${mouseX}px ${mouseY}px, rgba(0,232,255,0.35), rgba(124,244,224,0.28) 35%, rgba(180,110,255,0.18) 55%, transparent 70%)`;
 
   return (
     <section
@@ -28,7 +28,7 @@ export default function Hero() {
       {/* Spline 3D background (full cover) */}
       <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/z3DRq211g66TkBow/scene.splinecode"
+          scene="https://prod.spline.design/wwTRdG1D9CkNs368/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
       </div>
@@ -44,7 +44,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#111522]/50 to-[#0B0D17]" />
       </div>
 
-      {/* Mouse-following flash of light */}
+      {/* Local mouse-following flash for the hero section */}
       <motion.div
         className="pointer-events-none absolute inset-0"
         style={{ backgroundImage: flash }}
@@ -68,11 +68,11 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.8 }}
           className="relative mx-auto max-w-5xl font-extrabold leading-tight tracking-tight text-[#F8FAFC] text-[clamp(2rem,6vw,3.75rem)]"
         >
-          Evident
+          How visible is your brand across humans, algorithms, and AI?
           <div className="relative mt-5 flex w-full justify-center">
             <div className="relative inline-block">
-              <span className="text-[clamp(1.1rem,2.6vw,1.6rem)] font-normal text-slate-200">
-                Deep violet. Magenta. Cyan. Navy. Make your presence unmistakable.
+              <span className="text-[clamp(1.05rem,2.3vw,1.5rem)] font-normal text-slate-200">
+                Measure, benchmark, and improve your discoverability.
               </span>
               {/* Cyan beam line */}
               <motion.span
